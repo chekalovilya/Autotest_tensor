@@ -8,11 +8,11 @@ from selenium.webdriver.common.by import By
 class YandexElements:
     LOCATOR_SEARCH_FIELD = (By.ID, "text")
     LOCATOR_SUGGEST = (By.CLASS_NAME, "mini-suggest__popup_visible")
-    LOCATOR_LINKS = (By.CSS_SELECTOR, '.path .link')
+    LOCATOR_LINKS = (By.CSS_SELECTOR, ".path .link")
     LOCATOR_NECESSARY_LINK = "tensor.ru"
     LOCATOR_IMAGES_LINK = (By.CLASS_NAME, "services-new__icon_images")
     LOCATOR_FIRST_CATEGORY = (By.CSS_SELECTOR, ".PopularRequestList-Item_pos_0")
-    LOCATOR_NAME_FIRST_CATEGORY = 'data-grid-text'
+    LOCATOR_NAME_FIRST_CATEGORY = "data-grid-text"
     LOCATOR_SEARCH_NAME = (By.CLASS_NAME, "input__control")
     LOCATOR_FIRST_IMG = (By.CLASS_NAME, "serp-item__link")
     LOCATOR_CHECK_FIRST_IMG = (By.CLASS_NAME, "ImagesViewer-Container")
@@ -25,7 +25,7 @@ class YandexElements:
 class Helpers:
 
     def __init__(self):
-        self.driver = webdriver.Chrome(r'chromedriver.exe')
+        self.driver = webdriver.Chrome(r"chromedriver.exe")
 
     @staticmethod
     def check_find_link(searching_results, link):
@@ -84,5 +84,5 @@ class Helpers:
         :return: Возвращаем текст из найденного атрибута
         """
         search_elem = self.find_element(YandexElements().LOCATOR_SEARCH_NAME)
-        text = search_elem.get_attribute('value')
+        text = search_elem.get_attribute("value")
         return text

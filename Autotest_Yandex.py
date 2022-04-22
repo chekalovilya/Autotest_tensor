@@ -13,7 +13,7 @@ class TestUI(unittest.TestCase):
         self.driver.maximize_window()
 
     def test_1(self):
-        search = 'Тензор'
+        search = "Тензор"
 
         # Нашли поле поиска
         search_field = self.helpers.find_element(self.ya_elem.LOCATOR_SEARCH_FIELD)
@@ -53,22 +53,22 @@ class TestUI(unittest.TestCase):
         search_name = self.helpers.find_search_text()
 
         # Проверяем совпадение названия категорий
-        self.assertEqual(category_name, search_name, 'Названия категорий разные')
+        self.assertEqual(category_name, search_name, "Названия категорий разные")
 
         # Открываем первую картинку
         self.helpers.find_elements(self.ya_elem.LOCATOR_FIRST_IMG)[0].click()
 
         # Проверяем, что первая картинка открылась
-        self.helpers.wait_open(self.ya_elem.LOCATOR_CHECK_FIRST_IMG, 'Первая картинка не открылась')
+        self.helpers.wait_open(self.ya_elem.LOCATOR_CHECK_FIRST_IMG, "Первая картинка не открылась")
 
         # Получаем атрибут первой картинки
-        image_1 = self.helpers.find_element(self.ya_elem.LOCATOR_ATRIBUTE_FIRST_IMG).get_attribute('src')
+        image_1 = self.helpers.find_element(self.ya_elem.LOCATOR_ATRIBUTE_FIRST_IMG).get_attribute("src")
 
         # Переключаемся на следущую картинку
         self.helpers.find_element(self.ya_elem.LOCATOR_NEXT_IMAGE).click()
 
         # Получаем атрибут второй картинки
-        image_2 = self.helpers.find_element(self.ya_elem.LOCATOR_ATRIBUTE_SECOND_IMAGE).get_attribute('src')
+        image_2 = self.helpers.find_element(self.ya_elem.LOCATOR_ATRIBUTE_SECOND_IMAGE).get_attribute("src")
 
         # Проверяем, что картинка изменилась после переключения
         self.assertNotEqual(image_1, image_2, "Картинка не изменилась")
