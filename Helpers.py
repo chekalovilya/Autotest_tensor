@@ -63,15 +63,15 @@ class Helpers:
 
     def switch_windows(self, window):
         """
-        Переключаемся на нужную вкалдку браузера
-        :param window: номер нужнолй вкладки
+        Переключаемся на нужную вкладку браузера
+        :param window: номер нужной вкладки
         :return: переключение на нужную вкладку
         """
         return self.driver.switch_to.window(self.driver.window_handles[window])
 
     def wait_open(self, locator, error="Элемент не найден"):
         """
-        Проеверяем, что на странице появился нужный элемент
+        Провееряем, что на странице появился нужный элемент
         :param locator: селектор элемента
         :param error: Текст, который будет напечатан в случае ошибки
         """
